@@ -1,0 +1,152 @@
+/* Configuración general */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background-color: #eeeeee;
+}
+
+/* Contenedor: ocupa al menos toda la pantalla */
+.pagina {
+    width: 100%;
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+/* Encabezado */
+.encabezado {
+    padding: 22px 15px;
+    text-align: center;
+    color: white;
+    background-color: salmon;
+}
+
+.encabezado h1 {
+    margin: 0 0 8px;
+    font-size: 24px;
+}
+
+.encabezado p {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* Menú */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #16b99b;
+}
+
+.menu a {
+    padding: 12px 15px;
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: #11977e;
+}
+
+/* Columnas principales: 30% y 70% */
+.contenido {
+    display: flex;
+    flex: 1;
+    align-items: stretch;
+}
+
+.barra-lateral {
+    flex: 0 0 30%;
+    padding: 15px;
+    background-color: #f0f0f0;
+}
+
+.blog {
+    flex: 0 0 70%;
+    padding: 15px;
+    background-color: white;
+}
+
+.barra-lateral h2,
+.blog h2 {
+    margin-top: 0;
+    font-size: 17px;
+}
+
+.barra-lateral h3 {
+    font-size: 15px;
+}
+
+.barra-lateral img,
+.blog img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+.barra-lateral p,
+.blog p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.articulo {
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #aaa;
+}
+
+.articulo h2 {
+    margin-bottom: 5px;
+}
+
+.articulo .fecha {
+    margin-top: 0;
+    font-size: 11px;
+}
+
+/* Footer al borde inferior cuando hay poco contenido */
+.pie {
+    margin-top: auto;
+    padding: 15px;
+    text-align: center;
+    background-color: #dddddd;
+}
+
+.pie p {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* En pantallas pequeñas, las columnas se apilan */
+@media (max-width: 650px) {
+    .contenido {
+        flex-direction: column;
+    }
+
+    .barra-lateral,
+    .blog {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .menu {
+        justify-content: center;
+    }
+}
